@@ -1,0 +1,164 @@
+{% extends "member/base.html" %}
+
+{% load static %}
+{% block extra_head %}
+
+{% endblock extra_head %}
+
+{% block sidemenu %}
+<li><a href="{% url 'index' %}"> <i class="fas fa-home"></i>首頁</a><li>          
+  <li><a href="#doctorDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-md"></i>醫生 </a>
+    <ul id="doctorDropdown" class="collapse list-unstyled ">
+      <li><a href="/member/docApprovelist/">醫生申請核可</a></li>
+      <li><a href="/member/docVideoLink/">醫生視訊連結</a></li>
+    </ul>
+  </li>
+  <li><a href="#approveDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-stamp"></i>其他申請核可 </a>
+    <ul id="approveDropdown" class="collapse list-unstyled ">
+      <li><a href="/member/clinicApprovelist/">診所申請核可</a></li>
+      <li class="active"><a href="/member/storeApprovelist/">店家申請核可</a></li>
+    </ul>
+  </li>
+{% endblock sidemenu %}
+
+{% block content %}
+<!-- page detail -->
+<div class="container-fluid px-3">
+  <div class="div">
+    <input type="hidden" id="src_store_id">
+    <input type="hidden" id="admin_account" name="admin_account" value="{{ admin_account }}">
+  </div>
+  <div class="media">
+    {% if data.photo != '' %}
+      <img class="mr-3" src="{{ data.photo }}" width="400px" height="400px" >
+    {% else %}
+      <img class="mr-3" src="" width="400px" height="400px" >
+    {% endif %}
+    <div class="media-body">
+      <div class="row my-3">
+        <div class="col">
+          <span class = "mx-3 text-secondary">店家名稱</span>
+          <h1 class = "mx-3 text-dark" id="store_name">
+            {{ data.store_name }}
+          </h1>
+        </div>
+        <div class="col">
+          <span class = "mx-3 text-secondary">會員帳號</span>
+          <h1 class = "mx-3 text-dark" id="account">
+            {{ data.account }}
+          </h1>
+        </div>        
+      </div>
+      <div class="row my-3">
+        <div class="col">
+          <span class = "mx-3 text-secondary">地區</span>
+          <h1 class = "mx-3" id="area">
+              {{ data.area}}
+          </h1>
+        </div>
+        <div class="col">
+          <span class = "mx-3 text-secondary">店家地址</span>
+          <h1 class = "mx-3 text-dark" id="address">
+            {{ data.address }}
+          </h1>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col">
+          <span class = "mx-3 text-secondary">電話</span>
+          <h1 class = "mx-3 text-dark" id="tel">
+            {{ data.tel }}
+          </h1>
+        </div>
+        <div class="col">
+          <span class = "mx-3 text-secondary">Email</span>
+          <h1 class = "mx-3 text-dark" id="email">
+            {{ data.email }}
+          </h1>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col">
+          <span class = "mx-3 text-secondary">服務內容</span>
+          <h1 class = "mx-3 text-dark" id="serv_content">
+            {{ data.serv_content }}
+          </h1>
+        </div>
+        <div class="col">
+          <span class = "mx-3 text-secondary">簡介</span>
+          <h1 class = "mx-3 text-dark" id="desc">
+            {{ data.desc }}
+          </h1>
+        </div>
+      </div>      
+      <div class="row my-3">
+        <div class="col">
+          <h1 class = "mx-3 text-dark">
+            <div class="form-group form-check-inline">
+              {% if data.is_doctor == '1' %}
+                <input class="form-check-input" type="checkbox" id="is_doctor" checked disabled>
+              {% else %}
+                <input class="form-check-input" type="checkbox" id="is_doctor" disabled>
+              {% endif %}
+              <label class="form-check-label" for="is_doctor" style="font-size: 16px;">醫生身份</label>
+            </div>
+            <div class="form-group form-check-inline">
+              {% if data.is_clinic == '1' %}
+                <input class="form-check-input" type="checkbox" id="is_clinic" checked disabled>
+              {% else %}
+                <input class="form-check-input" type="checkbox" id="is_clinic" disabled>
+              {% endif %}
+              <label class="form-check-label" for="is_clinic" style="font-size: 16px;">診所身份</label>
+            </div>
+            <div class="form-group form-check-inline">
+              {% if data.is_store == '1' %}
+                <input class="form-check-input" type="checkbox" id="is_store" checked disabled>
+              {% else %}
+                <input class="form-check-input" type="checkbox" id="is_store" disabled>
+              {% endif %}
+              <label class="form-check-label" for="is_store" style="font-size: 16px;">店家身份</label>
+            </div>
+          </h1>        
+        </div>
+      </div>
+      <div class="row my-3">
+        <div class="col">
+          <span class = "mx-3 text-secondary">註冊時間</span>
+          <h1 class = "mx-3 text-dark" id="created_date">
+            {{ data.created_date }}
+          </h1>
+        </div>
+        <div class="col">
+          <span class = "mx-3 text-secondary">最後登入時間</span>
+          <h1 class = "mx-3 text-dark" id="last_login_date">
+            {{ data.last_login_date }}
+          </h1>
+        </div>
+      </div>
+      <form action=""  method="POST">
+        {% csrf_token %}                  
+        <div class="row mb-3">
+          <div class="col inline">
+            <span class = "mx-3 text-secondary">店家資格</span>
+            <h1>
+              {% if data.is_approved == '1' %}
+                <span class = "mx-3 text-primary">已確認</span>
+              {% else %}
+                <span class = "mx-3 text-danger">尚未確認</span>
+                <button type="submit" class="btn mr-2 btn-primary submit" id="btnApprove">申請確認</button>
+              {% endif %}  
+            </h1>
+          </div>
+        </div>
+      </form>
+    </div>    
+  </div>
+
+</div>
+{% endblock content %}
+
+{% block extra_scripts %}
+<!-- custom js -->
+<script src="{% static 'member/js/storeDetail.js' %}"></script>
+
+{% endblock extra_scripts %}

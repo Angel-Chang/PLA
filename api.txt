@@ -1,0 +1,70 @@
+[register]
+request:
+{
+    "account":"0911222111",
+    "user_password":"test3333"
+}
+response:
+{
+    "code": 0,
+    "msg": "success",
+    "uid": 3
+}
+
+[update_password]
+request:
+{
+    "uid":1,
+    "user_password":"test1234"
+}
+response:
+{
+    "code": 0,
+    "msg": "success"
+}
+
+[get_member_uid]
+request:
+{
+
+    "account":"0911222333"
+}
+response:
+{
+    "code": 0,
+    "msg": "success",
+    "uid": 4
+}
+{
+    "code": -1,
+    "msg": "會員帳號:099999999 不存在."
+}
+
+
+
+
+[api/token/]
+request:
+{
+    "username":"0912123789",
+    "password":"test5678"
+}
+response:
+{
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYxNjU1ODM1NywianRpIjoiMzlkNzM3OGVmNDU2NDUwOTkwNjdmNWE2ODIzYThjNjMiLCJ1c2VyX2lkIjozfQ.sgEel0PxZ06kNPCQF_uoleedjRXGQ84yb1KOlVR4aLk",
+    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2NDcyMjU3LCJqdGkiOiI5NTM0ZWI0MzhmMzQ0MjY2YjAwOGJiZDEzODYyMzc0MSIsInVzZXJfaWQiOjN9.BAAYm69C_Xg5tQOmJbKweg8y59ANp5u4jfWj8ZATF7I"
+}
+
+[api/token/refresh/]
+request:
+{
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYxNjU1ODM1NywianRpIjoiMzlkNzM3OGVmNDU2NDUwOTkwNjdmNWE2ODIzYThjNjMiLCJ1c2VyX2lkIjozfQ.sgEel0PxZ06kNPCQF_uoleedjRXGQ84yb1KOlVR4aLk"
+}
+response:
+{
+    "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2NDcyNzE3LCJqdGkiOiJkMzNlMDhjNDlhNGI0MWIzYTRhOTUzOTk4ZjI3NGE1YiIsInVzZXJfaWQiOjN9.3ZYp9iUf3WBxZXwwsU33vyoo_o6sWOhcWRSvrtQQdVU"
+}
+
+
+
+

@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv="Content-Language" content="zh-tw">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="{% static 'member/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <!-- Fontastic Custom icon font-->
+  <link rel="stylesheet" href="{% static 'member/css/fontastic.css' %}">
+  <!-- theme stylesheet -->
+  <link rel="stylesheet" href="{% static 'member/css/style.default.premium.css' %}" id="theme-stylesheet">
+  <!-- Font awesome -->
+  <!-- <script src="https://kit.fontawesome.com/f9dda67a2e.js" crossorigin="anonymous"></script> -->
+
+  <title>新人妻滿屋遊戲官方網頁</title>
+</head>
+
+<body>
+  <div align="center">
+    <!-- <p>buysafeno:{{ buysafeno }}</p>
+    <p>web:{{ web }}</p>
+    <p>Td:{{ Td }}</p>
+    <p>MN:{{ MN }}</p>
+    <p>webname:{{ webname }}</p>
+    <p>Name:{{ Name }}</p>
+    <p>note1:{{ note1 }}</p>
+    <p>note2:{{ note2 }}</p>
+    <p>approveCode:{{ approveCode }}</p>
+    <p>cardNo:{{ cardNo }}</p>
+    <p>sendType:{{ sendType }}</p>
+    <p>errcode:{{ errcode }}</p>
+    <p>errmsg:{{ errmsg }}</p>
+    <p>cardType:{{ cardType }}</p>
+    <p>cargoNo:{{ cargoNo }}</p>
+    <p>StoreID:{{ StoreID }}</p>
+    <p>StoreName:{{ StoreName }}</p>
+    <p>InvoiceNo:{{ InvoiceNo }}</p>
+    <p>ChkValue:{{ ChkValue }}</p> -->
+    <H1>{{ ret_msg }}</H1>
+    <br>
+    <div ALIGN="CENTER" style="font-size:15;color:threeddarkshadow;" >
+      如果你不執行任何操作，系統會在5秒後自動開啟遊戲！
+    </div>
+    <div ALIGN="CENTER" style="font-size:15;color:threeddarkshadow;" id="his">
+      5秒後自動開啟遊戲.....
+    </div>
+  </div>
+  <!-- JavaScript files-->
+  <script src="{% static 'member/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'member/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'member/js/jquery.cookie.js' %}"> </script>
+  <script src="{% static 'member/js/jquery.validate.min.js' %}"></script>
+  <script>
+    var time = 5;
+    var timelong = 0;
+    function displaytime() {
+      document.all.his.innerHTML = time - timelong;
+      timelong = timelong + 1;
+    }
+
+    function enterGame(){
+      window.location.href="http://game.anygame989.com/";
+    }
+    timer = setInterval('displaytime()', 1000);     // 顯示時間
+    timer = setTimeout('enterGame()',time * 1000);  // 跳轉 
+  </script>
+</body>
+
+</html>

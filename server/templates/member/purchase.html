@@ -1,0 +1,1192 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+  <meta http-equiv="Content-Language" content="zh-tw">
+  <meta http-equiv="Content-Type" content="text/html; charset=big5">
+  <!-- no cache start -->
+  <meta http-equiv='cache-control' content='no-cache'>
+  <meta http-equiv='expires' content='0'>
+  <meta http-equiv='pragma' content='no-cache'>
+  <!-- no cache end -->
+  <meta name="viewport" content="width=device-width, initial-scale=0.35, minimum-scale=0.35, maximum-scale=1">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="{% static 'member/vendor/bootstrap/css/bootstrap.min.css' %}">
+  <!-- Font Awesome CSS-->
+  <!-- <link rel="stylesheet" href="{% static 'member/vendor/font-awesome 4.7/css/font-awesome.min.css' %}"> -->
+  <!-- Fontastic Custom icon font-->
+  <link rel="stylesheet" href="{% static 'member/css/fontastic.css' %}">
+  <!-- theme stylesheet -->
+  <link rel="stylesheet" href="{% static 'member/css/style.default.premium.css' %}" id="theme-stylesheet">
+  <!-- Font awesome -->
+  <!-- <script src="https://kit.fontawesome.com/f9dda67a2e.js" crossorigin="anonymous"></script> -->
+
+  <title>新人妻滿屋遊戲官方網頁</title>
+  <meta name="keywords" content="人妻滿屋,人妻,情色,遊戲,寫真,外拍,夏暮光,甄馨,黎妍,兔兔,韓夏恩,夏恩,嵐嵐">
+  <meta name="description" content="「新人妻滿屋」是ANYGAME推出的系列寫真遊戲。現實上我們不可能坐擁許多人妻，但在遊戲裡面可以圓夢。如今，你可以蒐集美女人妻的寫真照片，而且有機會獲得由這些寫真照片集結成冊的實體寫真書，未來，甚至還可以與表特模特兒們相見歡、近距離接觸、共同參加包括外拍在內等等的各式粉絲社團活動。">
+<style>
+  .modal-dialog{
+    top:350px;
+    max-width: 550px;
+    overflow-y: initial !important
+  }
+
+  .modal-body{
+    height: 300px;
+    overflow-y: auto;
+}
+</style>
+
+</head>
+
+<body bgcolor="#282828" topmargin="0">
+
+<div align="center">
+  <table border="0" width="1080" id="table1" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+    <tr>
+      <td>
+      <p style="margin-top: 0; margin-bottom: 0">
+      <img border="0" src="{% static 'member/img/wife01.jpg' %}" width="1080" height="719"></p>
+      <p style="margin-top: 0; margin-bottom: 0">
+      <img border="0" src="{% static 'member/img/wife02.jpg' %}" width="1080" height="932"></p>
+      <table border="0" width="1080" id="table2" cellspacing="0" cellpadding="0" height="564">
+        <tr>
+        <td width="528">
+          <p style="margin-top: 0; margin-bottom: 0">
+          <img border="0" src="{% static 'member/img/wife03a.jpg' %}" width="528" height="564"></td>
+          <td width="552" background="{% static 'member/img/wife03b.jpg' %}" valign="top">
+          <p style="margin-top: 0; margin-bottom: 0" align="left">
+            <iframe width="520" height="293" src="https://www.youtube.com/embed/q7vaIqG2mgE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+        </tr>
+      </table>
+      <p style="margin-top: 0; margin-bottom: 0">
+      <img border="0" src="{% static 'member/img/wife04.jpg' %}" width="1080" height="1142"></p>
+      <p style="margin-top: 0; margin-bottom: 0">
+      <img border="0" src="{% static 'member/img/wife05.jpg' %}" width="1080" height="623"></p>
+      <p style="margin-top: 0; margin-bottom: 0">
+      <img border="0" src="{% static 'member/img/wife06.jpg' %}" width="1080" height="683"></p>
+      <p style="margin-top: 0; margin-bottom: 0">
+      <img border="0" src="{% static 'member/img/wife07.jpg' %}" width="1080" height="1160"></p>
+      <table border="0" width="1080" id="table3" cellspacing="0" cellpadding="0" background="{% static 'member/img/bk1.jpg' %}" height="156">
+        <tr>
+          <td valign="top">
+          <p align="center">
+            <button type="button" style="background-image:url('{% static 'member/img/button1.gif' %}');width:335px;height:98px;" class="btn" id="btnEnterGame"></button>
+          </td>
+          <!-- <img border="0" src="{% static 'member/img/button1.gif' %}" width="335" height="98"></td> -->
+        </tr>
+      </table>
+      <p style="margin-top: 0; margin-bottom: 0">
+      <div class="container pt-5" style="width:750px ;">
+        <form name="orderform" action="" method="POST">
+          {% csrf_token %}
+          <!-- {% if form.errors %}
+          <ul class="messages">
+            {% for message in messages %}
+              <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %} -->
+
+          <div>
+            <input type="hidden" id="group">
+            <input type="hidden" id="staff">
+            <input type="hidden" name="web" id="web">
+            <input type="hidden" name="MN" id="MN">
+            <input type="hidden" name="OrderInfo" id="OrderInfo">
+            <input type="hidden" name="Td" id="Td">
+            <input type="hidden" name="sna" id="sna">
+            <input type="hidden" name="sdt" id="sdt" >
+            <input type="hidden" name="email" id="email">
+            <input type="hidden" name="note1" id="note1">
+            <input type="hidden" name="note2" id="note2">
+            <input type="hidden" name="Card_Type" id="Card_Type">
+            <input type="hidden" name="Country_Type" id="Country_Type">
+            <input type="hidden" name="Term" id="Term">
+            <input type="hidden" name="CargoFlag" id="CargoFlag">
+            <input type="hidden" name="StoreID" id="StoreID">
+            <input type="hidden" name="StoreName" id="StoreName">
+            <input type="hidden" name="BuyerCid" id="BuyerCid">
+            <input type="hidden" name="DonationCode" id="DonationCode">
+            <input type="hidden" name="Carrier_ID" id="Carrier_ID">
+            <input type="hidden" name="ChkValue" id="ChkValue">
+          </div>
+          <div class="form-group">
+            <label for="inputName"><span class='text-danger'>*</span>姓名</label>
+            {% if buyer_name %}
+              <input type="text" class="form-control form-control-lg" id="inputName" value={{ buyer_name }}>
+            {% else %}
+              <input type="text" class="form-control form-control-lg" id="inputName" placeholder="請填寫您的姓名">
+            {% endif %}
+            </div>
+          <div class="form-group">
+            <label for="inputPhone"><span class='text-danger'>*</span>行動電話</label>
+            {% if phone %}
+              <input type="text" class="form-control form-control-lg" id="inputPhone" value={{ phone }}>
+            {% else %}
+              <input type="text" class="form-control form-control-lg" id="inputPhone" placeholder="填寫您常用的行動電話 09xxxxxxxx">
+            {% endif %}
+          </div>
+          <div class="form-group">
+            <label for="inputEmail"><span class='text-danger'>*</span>電子郵箱</label>
+            {% if email %}
+              <input type="text" class="form-control form-control-lg" id="inputEmail" value={{ email }}>
+            {% else %}
+              <input type="text" class="form-control form-control-lg" id="inputEmail" placeholder="填寫您常用的郵箱">
+            {% endif %}
+          </div>
+          <div class="form-group">
+            <label for="inputAccount"><span class='text-danger'>*</span>設定帳號</label>
+            {% if account %}
+              <input type="text" class="form-control form-control-lg" id="inputAccount"  value={{ account }} oninput = "value=value.replace(/[^\w\/]/ig,'')" maxlength="15">
+            {% else %}
+              <input type="text" class="form-control form-control-lg" id="inputAccount" placeholder="填寫並記得您用於登入遊戲的帳號名稱" oninput = "value=value.replace(/[^\w\/]/ig,'')" maxlength="15">
+            {% endif %}
+          </div>
+          <div class="form-group">
+            <label for="inputPwd"><span class='text-danger'>*</span>設定密碼</label>
+            {% if password %}
+              <input type="text" class="form-control form-control-lg" id="inputPwd"   value={{ password }} oninput = "value=value.replace(/[^\w\/]/ig,'')" maxlength="15">
+            {% else %}
+              <input type="text" class="form-control form-control-lg" id="inputPwd" placeholder="填寫並記得您用於登入遊戲的帳號密碼" oninput = "value=value.replace(/[^\w\/]/ig,'')" maxlength="15">
+            {% endif %}
+          </div>
+
+          <div class="form-group">
+            <label for="inputMemo">留言備註</label>
+            {% if memo %}
+              <textarea type="text" class="form-control form-control-lg" rows="2" value={{ memo }} placeholder="留言您的特殊需求或者其它想要告訴我們的事情"></textarea>
+            {% else %}
+              <textarea type="text" class="form-control form-control-lg" rows="2" id="inputMemo" placeholder="留言您的特殊需求或者其它想要告訴我們的事情"></textarea>
+            {% endif %}
+          </div>
+          <div class="py-5 row justify-content-center">
+            <button type="button" style="background-image:url('{% static 'member/img/button2.gif' %}');width:335px;height:98px;" class="btn" id="btnSave"></button>
+          </div>
+        </form>        
+      </div>
+      <p align="left">
+      <img border="0" src="{% static 'member/img/wife08.jpg' %}" width="1080" height="310"></p>
+      <p align="left">　</p>
+      <p style="margin-top: 0; margin-bottom: 0" align="center">&nbsp;|&nbsp; 
+      聯絡我們&nbsp; |&nbsp; <a href="#" data-toggle="modal" data-target="#privcyStatement">服務暨隱私協議</a>&nbsp; |</p>
+      <p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="center">
+      <br>
+      Copyright &copy; 2020-2021 AXE capital co., Ltd. All rights reserved.<br>
+      版權所有&copy; 2020-2021 安克思國際有限公司</p>
+      <p style="margin-top: 0; margin-bottom: 0">　</p>
+      <p style="margin-top: 0; margin-bottom: 0">　</td>
+
+    </tr>
+  </table>
+  <!-- 隱私條款 -->
+  <div class="modal" id="privcyStatement" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="addLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">隱私條款</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table border="0" width="510" id="table11" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+            <tr>
+              <td>
+                <p style="margin-top: 0;margin-bottom: 0;">
+                  安克思遊戲（AnyGame）為提供完善以及多元的服務及商品，在法令許可下，在此將依個人資料保護法之規定對您的個人資料蒐集、使用、管理，及提供您的資料給服務供應商或關係企業，以確保提供給您更好的服務品質，並致力監管及確保員工在處理資料時有絕對的嚴謹及保密性。
+                </p>
+              </td>
+            </tr>
+            <!-- 本隱私權原則說明 -->
+            <table border="0" width="510" id="table12" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+              <tr>
+                <td colspan="2">
+                  <p style="margin-top: 10;margin-bottom: 10;"></p>
+                  <p class="text-success text-center" style="margin-top:0;margin-bottom: 0;">
+                    本隱私權原則說明
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">1.</p>
+                </td>
+                <td>
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    我們如何及為何收集您的個人資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">2.</p>
+                </td>
+                <td>
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    我們如何使用您的個人資料，以及您對於個人資料可做出的選擇
+                  </p>
+                </td>
+              </tr>
+            </table>
+            <!-- （一）我們收集的資料 -->
+            <table border="0" width="510" id="table13" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+              <tr>
+                <td colspan="3" valign="top">
+                  <p style="margin-top: 10;margin-bottom: 10;"></p>
+                  <p class="text-success text-center" style="margin-top:0;margin-bottom: 0;">
+                    （一）我們收集的資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">1.</p>
+                </td>
+                <td colspan="2">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    您提供給我們的資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（A）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    聯絡資訊（包括姓名和電子郵件地址）
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（B）</p>
+                </td>
+                <td>
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    帳號資訊（包含玩家的名稱與密碼）
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">2.</p>
+                </td>
+                <td colspan="2" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    我們自動收集的資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（A）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    有關您的帳號和遊戲進度的資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（B）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    您的 IP 位址和行動裝置識別碼（如您的裝置 ID、廣告 ID、MAC 位址、IMEI）
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（C）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    有關您裝置的資料，如裝置名稱、作業系統、瀏覽器和語言
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（D）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    我們以 Cookie 和類似技術收集的資料（參閱下方COOKIE 和類似技術一節）
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（E）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    一般位置資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（F）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    服務使用資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="center">※	</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    多數情況下，我們也會在您使用服務時為您建立安克思遊戲（AnyGame）特定ID
+                  </p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">3.</p>
+                </td>
+                <td colspan="2" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    我們從合作夥伴收集的資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（A）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    在您使用服務連結第三方工具（如 Facebook、WeChat 或 Google）的情況下，我們會接收到的資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（B）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    人口統計資料（如用於粗略定位 IP 位址的資料）
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（C）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    用於打擊詐欺的資料（如在遊戲中濫用退款機制或廣告點擊詐欺）
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（D）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    來自遊戲執行平台的資料（如用於驗證付款的資料）
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（E）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    用於廣告和分析的資料，我們透過此資料以提供您更好的服務                  
+                  </p>
+                </td>
+              </tr>
+
+            </table>
+            <!-- （二）	我們為何收集您的資料 -->
+            <table border="0" width="510" id="table14" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+              <tr>
+                <td colspan="3" valign="top">
+                  <p style="margin-top: 10;margin-bottom: 10;"></p>
+                  <p class="text-success text-center" style="margin-top:0;margin-bottom: 0;">
+                    （二）我們為何收集您的資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">1.</p>
+                </td>
+                <td colspan="2">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    為了讓服務有效運作
+                  </p>
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    為了履行合約，我們處理下列項目的必要資料：
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（A）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    建立帳戶，讓您可以遊玩我們的遊戲和使用服務
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（B）</p>
+                </td>
+                <td>
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    營運服務
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（C）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    驗證和確認付款
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（D）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    提供並交付您要求的產品和服務
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（E）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    向您傳送服務相關的通訊
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">2.</p>
+                </td>
+                <td colspan="2" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    讓服務更適合我們的玩家
+                  </p>
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    為提供絕佳服務給玩家，我們有收集和處理必要資料的合法利益，用於以下項目：
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（A）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    更新和開發玩家個人檔案
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（B）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    開發並改善服務和玩家體驗
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（C）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    管理我們與您的關係
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（D）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    提供社交功能作為服務的一部份
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（E）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    客製化您的服務體驗
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（F）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    回覆您的意見和問題，並提供玩家支援
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（G）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    透過電子郵件提供您服務以及其他網站和安克思遊戲（AnyGame）服務優惠
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（H）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    將相關資訊傳送給您，例如更新、安全性警告和支援訊息
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（I）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    使您能夠與其他玩家進行溝通
+                  </p>
+                </td>
+              </tr>                            
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">3.</p>
+                </td>
+                <td colspan="2" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    顯示個人化廣告
+                  </p>
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    為了在服務以及其他網站和服務（包括電子郵件）中顯示個人化廣告，我們有處理必要資料的合法利益，用於以下項目：
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（A）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    追蹤您使用服務所存取的相關內容，以及線上行為
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（B）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    提供、定位和改善我們的廣告和服務
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="center">※	</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    如需選擇退出個人化廣告方式的詳細資訊，請參閱下方〈您的權利與選項〉一節
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">4.</p>
+                </td>
+                <td colspan="2" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    維持服務的安全性和公平性
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="center">※	</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    確保服務中公平競爭的環境是我們的最優先事項。
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="center">※	</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    為了維持服務及其社交功能的安全和公平、打擊詐欺並確保其他方面的使用規章，我們有處理必要資料的合法利益。
+                  </p>
+                </td>
+              </tr>              
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="center">※	</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    基於上述情況與目的，我們可能會分析、剖析以及分割所有收集的資料。
+                  </p>
+                </td>
+              </tr>
+            </table>
+            <!-- （三）誰能看見您的資料 -->
+            <table border="0" width="510" id="table15" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+              <tr>
+                <td colspan="3" valign="top">
+                  <p style="margin-top: 10;margin-bottom: 10;"></p>
+                  <p class="text-success text-center" style="margin-top:0;margin-bottom: 0;">
+                    （三）誰能看見您的資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    除了安克思遊戲（AnyGame），其他人可能在下列情況存取您的資料：
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">1.</p>
+                </td>
+                <td colspan="2">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    為安克思遊戲（AnyGame）工作的合作夥伴
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td valign="top" colspan="2">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    安克思遊戲（AnyGame）有為我們執行服務的合作夥伴。這些合作夥伴只會根據安克思遊戲（AnyGame）的指示處理您的資料以提供服務，例如主辦活動、支援玩家、進行廣告、分析和預防詐欺。
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">2.</p>
+                </td>
+                <td colspan="2" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    其他公司和政府當局
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td valign="top" colspan="2">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    為了打擊詐欺和非法活動，我們可能會與其他公司和組織交換資料，並將資料交給政府當局以回應法律要求。
+                  </p>
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    我們也可能基於您的同意、為了遵守法律、或者為了保障我們、玩家或其他人的權利、財產與安全而揭露您的資料。
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">3.</p>
+                </td>
+                <td colspan="2" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    廣告與社交媒體合作夥伴
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td valign="top" colspan="2">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    服務包含來自合作夥伴的功能，例如社交媒體互動工具和遊戲內廣告。這些合作夥伴可能會存取您的資料，並遵守其隱私權原則。建議您查看他們的隱私權原則，以深入瞭解其資料處理實務。
+                  </p>
+                </td>
+              </tr>
+            </table>
+            <!-- （四）國際資料轉移 -->
+            <table border="0" width="510" id="table16" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+              <tr>
+                <td valign="top">
+                  <p style="margin-top: 10;margin-bottom: 10;"></p>
+                  <p class="text-success text-center" style="margin-top:0;margin-bottom: 0;">
+                    （四）國際資料轉移
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    我們的服務具有全球性本質，因此您的資料可能會傳輸到世界任何地方。因為不同國家可能有不同於您本國的資料保護法，我們設法確保有足夠的保護措施，來按本原則所述保護您的資料。我們的合作夥伴可能使用的適當保護措施，包括歐盟委員會批准的標準合約條款，和在資料轉移至美國時取得隱私護盾 （Privacy Shield）認證。
+                  </p>
+                </td>
+              </tr>
+            </table>
+            <!-- （五）COOKIE 和類似技術 -->
+            <table border="0" width="510" id="table17" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+              <tr>
+                <td valign="top">
+                  <p style="margin-top: 10;margin-bottom: 10;"></p>
+                  <p class="text-success text-center" style="margin-top:0;margin-bottom: 0;">
+                    （五）COOKIE 和類似技術
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    如同大多線上服務，我們與合作夥伴會使用 Cookie 和類似技術來提供服務
+                    並將服務個人化、分析使用情況、導向目標式廣告以及預防詐欺。
+                    您可以在瀏覽器設定中停用 Cookie，但部分服務內容可能因此無法正常運作。
+                  </p>
+                </td>
+              </tr>
+            </table>
+
+            <!-- （六）我們如何保護您的資訊 -->
+            <table border="0" width="510" id="table18" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+              <tr>
+                <td colspan="3" valign="top">
+                  <p style="margin-top: 10;margin-bottom: 10;"></p>
+                  <p class="text-success text-center" style="margin-top:0;margin-bottom: 0;">
+                    （六）我們如何保護您的資訊
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">1.</p>
+                </td>
+                <td colspan="2">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    安全保障
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td colspan="2">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    為了確保玩家擁有安全的遊戲體驗，我們持續開發和實施管理、技術和實體安全措施
+                    ，以保護資料免於遭受未經授權的存取、遺失、濫用或變更。
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">2.</p>
+                </td>
+                <td colspan="2" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    資料保留
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td colspan="2">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    我們會在您的帳戶有效期間或為您提供服務所需的期間內保留資訊。例如，我們會定期將未使用的遊戲帳戶取消識別，並定期審查不必要的資料，將其取消識別。請注意，如果您要求我們刪除您的個人資料，我們將會為合法商業利益（如遵守法律義務、解決爭議和執行協議）保留必要的資料。
+                  </p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（A）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    有關您的帳號和遊戲進度的資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（B）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    您的 IP 位址和行動裝置識別碼（如您的裝置 ID、廣告 ID、MAC 位址、IMEI）
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（C）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    有關您裝置的資料，如裝置名稱、作業系統、瀏覽器和語言
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（D）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    我們以 Cookie 和類似技術收集的資料（參閱下方COOKIE 和類似技術一節）
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（E）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    一般位置資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（F）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    服務使用資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="center">※	</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    多數情況下，我們也會在您使用服務時為您建立安克思遊戲（AnyGame）特定ID
+                  </p>
+                </td>
+              </tr>
+
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">3.</p>
+                </td>
+                <td colspan="2" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    我們從合作夥伴收集的資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（A）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    在您使用服務連結第三方工具（如 Facebook、WeChat 或 Google）的情況下，我們會接收到的資料
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（B）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    人口統計資料（如用於粗略定位 IP 位址的資料）
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（C）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    用於打擊詐欺的資料（如在遊戲中濫用退款機制或廣告點擊詐欺）
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（D）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    來自遊戲執行平台的資料（如用於驗證付款的資料）
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left"></p>
+                </td>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">（E）</p>
+                </td>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    用於廣告和分析的資料，我們透過此資料以提供您更好的服務                  
+                  </p>
+                </td>
+              </tr>
+
+            </table>
+            <!-- （七）年齡限制 -->
+            <table border="0" width="510" id="table19" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+              <tr>
+                <td valign="top">
+                  <p style="margin-top: 10;margin-bottom: 10;"></p>
+                  <p class="text-success text-center" style="margin-top:0;margin-bottom: 0;">
+                    （七）年齡限制
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    我們不會在知情的情況下收集或徵求任何未滿 13 歲者的個人資料、
+                    不會在知情的情況下以未滿 13 歲者為興趣導向廣告的目標或將廣告指向此類個人，
+                    也不會在知情的情況下讓此類個人使用我們的服務。如果您未滿 13 歲，
+                    請勿將您的任何資料傳送給我們，包括您的名字、地址、電話號碼或電子郵件地址。
+                    未滿 13 歲的個人不得提供任何個人資料。如果我們發現收集到未滿 13 歲兒童
+                    的個人資料，我們會盡快將其刪除。如果您認為我們可能持有來自未滿 13 歲兒童
+                    的資料或未滿 13 歲兒童的相關資料，請與我們聯絡。
+                  </p>
+                </td>
+              </tr>
+            </table>
+            <!-- （八）您的權利與選項 -->
+            <table border="0" width="510" id="table20" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+              <tr>
+                <td colspan="3" valign="top">
+                  <p style="margin-top: 10;margin-bottom: 10;"></p>
+                  <p class="text-success text-center" style="margin-top:0;margin-bottom: 0;">
+                    （八）您的權利與選項
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">1.</p>
+                </td>
+                <td colspan="2">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    您有了解、存取、補充、更正、限制處理及刪除您的個人資料的權利。
+                    惟若您拒絕提供使用我們服務所需之必要資料，將可能導致無法享受完整服務
+                    或完全無法使用該項服務。
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td width="20" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">2.</p>
+                </td>
+                <td colspan="2" valign="top">
+                  <p style="margin-top: 0; margin-bottom: 0" align="left">
+                    如您欲行使上述權利，請與我們聯絡。
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </table>
+        </div>        
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript files-->
+  <script src="{% static 'member/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'member/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'member/js/jquery.cookie.js' %}"> </script>
+  <script src="{% static 'member/js/jquery.validate.min.js' %}"></script>
+  <!-- custom js -->
+  <script src="{% static 'member/js/purchase.js' %}"></script>
+</div>
+
+</body>
+
+</html>

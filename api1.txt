@@ -1,0 +1,437 @@
+FORMAT: 1A
+HOST: http://104.46.236.7:8000/member/
+
+# Pets Life API
+
+Pets Life APP call documents
+
+## 取得token (Get token) [api/token/]
+
+### Method [POST]
+
++ Request (application/json)
+
+        {
+            "username": "0912123789",
+            "password":"test5678"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYxNjU1ODM1NywianRpIjoiMzlkNzM3OGVmNDU2NDUwOTkwNjdmNWE2ODIzYThjNjMiLCJ1c2VyX2lkIjozfQ.sgEel0PxZ06kNPCQF_uoleedjRXGQ84yb1KOlVR4aLk",
+            "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2NDcyMjU3LCJqdGkiOiI5NTM0ZWI0MzhmMzQ0MjY2YjAwOGJiZDEzODYyMzc0MSIsInVzZXJfaWQiOjN9.BAAYm69C_Xg5tQOmJbKweg8y59ANp5u4jfWj8ZATF7I"
+        }
+
+
+## 取得新的token (Use refresh token to get new token) [api/token/refresh/]
+
+### Method [POST]
++ Request (application/json)
+
+        {
+            "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYxNjU1ODM1NywianRpIjoiMzlkNzM3OGVmNDU2NDUwOTkwNjdmNWE2ODIzYThjNjMiLCJ1c2VyX2lkIjozfQ.sgEel0PxZ06kNPCQF_uoleedjRXGQ84yb1KOlVR4aLk"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2NDcyNzE3LCJqdGkiOiJkMzNlMDhjNDlhNGI0MWIzYTRhOTUzOTk4ZjI3NGE1YiIsInVzZXJfaWQiOjN9.3ZYp9iUf3WBxZXwwsU33vyoo_o6sWOhcWRSvrtQQdVU"
+        }
+
+
+## 使用者註冊 (Register a new member) [register/]
+
+### Method [POST]
++ Request (application/json)
+
+        {
+            "account":"0911222111",
+            "user_password":"test3333"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "code": 0,
+            "msg": "success",
+            "uid": 3
+        }
+        
++ Response 400 (application/json)
+        {
+            "code": -1,
+            "msg": "會員帳號[0911222111] 已經存在."
+        }
+
+
+## 更新使用者密碼 (Update member password) [update_password/]
+
+### Method [PUT]
++ Request (application/json)
+
+        {
+            "uid":1,
+            "user_password":"test1234"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "code": 0,
+            "msg": "success"
+        }
+        
++ Response 400 (application/json)
+        {
+            "code": -1,
+            "msg": "The uid:1 不存在."
+        }
+        
+   
+## 透過帳號取得UID (Get member uid by account) [get_member_uid/]
+http://104.46.236.7:8010/member/get_member_uid/
++ Request (application/json)
+
+        {
+            "account":"0911222333"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "code": 0,
+            "msg": "success",
+            "uid": 4
+        }
+        
++ Response 400 (application/json)
+        {
+            "code": -1,
+            "msg": "會員帳號:0911222333 不存在."
+        }
+        
+
+## 透過帳號取得UID (Get member uid by account) [get_member_uid/]
+
+### Method [GET]
++ Request (application/json)
+
+        {
+            "account":"0911222333"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "code": 0,
+            "msg": "success",
+            "uid": 4
+        }
+        
++ Response 400 (application/json)
+        {
+            "code": -1,
+            "msg": "會員帳號:0911222333 不存在."
+        }
+
+## 登入 (Member login) [member_login/]
+        (0, '一般登入'),
+        (1, 'google 登入'),
+        (2, 'facebook 登入')
+### Method [GET]
++ Request (application/json)
+
+        {
+            "account": "0911222333",
+            "user_password": "test1234",
+            "login_type": 0
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "code": 0,
+            "msg": "success",
+            "uid": 4
+        }
+        
++ Response 400 (application/json)
+        {
+            "code": -1,
+            "msg": "會員帳號:0911222333 不存在."
+        }dea
+
+
+http://127.0.0.1:8000/member/updateMemberInfo/
+
+curl --location --request POST 'http://127.0.0.1:8000/member/updateMemberInfo/' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE4ODg1MjAwLCJqdGkiOiJkMzcwZTI3ZDYyODM0MTY2YjAzMTNhYmQ4NGUzZWJjNiIsInVzZXJfaWQiOjN9.IRgDrZqoNxAJ45tKmWptKWgZrydy9DPKNzeNw1lFTGo' \
+--form 'uid="5"' \
+--form 'account="0912123789"' \
+--form 'real_name="aa"' \
+--form 'nick_name="aa1"' \
+--form 'idNo="A123456789"' \
+--form 'email="aa@gmail.com"' \
+--form 'address="address"' \
+--form 'sex="1"' \
+--form 'myself="myself"' \
+--form 'status="2"' \
+--form 'image=@"/Users/dualwings/Desktop/賭神/messageImage_1618060009713.jpg"'
+
+{
+    "success": true
+}
+
+
+curl --location --request POST 'http://127.0.0.1:8000/member/updateMemberInfo/' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE4ODg1NjY0LCJqdGkiOiJmM2MwYjNkNTcwYTY0ZThjYWVhN2RkYjAxOGM1ZDQwZCIsInVzZXJfaWQiOjN9.hMXEHNwynnLH1nI1t_upGPA9Fo4JIsfP7Pm6McPMXK4' \
+--form 'uid="6"' \
+--form 'account="0912123789"' \
+--form 'real_name="aa"' \
+--form 'nick_name="aa1"' \
+--form 'idNo="A123456789"' \
+--form 'email="aa@gmail.com"' \
+--form 'address="address"' \
+--form 'sex="1"' \
+--form 'myself="myself"' \
+--form 'status="2"' \
+--form 'image=@"/Users/dualwings/Desktop/賭神/messageImage_1618060009713.jpg"'
+
+{
+    "success": false,
+    "error": "The uid:6 不存在."
+}
+
+
+
+curl --location --request GET 'http://127.0.0.1:8000/member/getMemberInfo/5/' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE4ODg1NjY0LCJqdGkiOiJmM2MwYjNkNTcwYTY0ZThjYWVhN2RkYjAxOGM1ZDQwZCIsInVzZXJfaWQiOjN9.hMXEHNwynnLH1nI1t_upGPA9Fo4JIsfP7Pm6McPMXK4' \
+--data-raw ''
+
+
+
+{
+    "data": {
+        "uid": 5,
+        "account": "0912123789",
+        "real_name": "'aa'",
+        "nick_name": "'aa1'",
+        "idNo": "'1234123456'",
+        "email": "aa@gmail.com",
+        "address": "'address'",
+        "sex": "1",
+        "myself": "'myself'",
+        "status": "2",
+        "is_doctor": false,
+        "is_clinic": false,
+        "is_store": false
+    },
+    "success": true
+}
+
+GET
+http://127.0.0.1:8000/member/getMemberInfo/6/
+
+{
+    "success": false,
+    "error": "The uid:6 不存在."
+}
+
+
+http://127.0.0.1:8000/member/addPetInfo/
+POST
+{
+    "success": false,
+    "error": {
+        "id": [
+            "This field is required."
+        ]
+    }
+}
+curl --location --request POST 'http://127.0.0.1:8000/member/addPetInfo/' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIwMTY1NjI3LCJqdGkiOiI1MGIyMDFjOTI5Njg0OWQyOTZkNTgzYWE3ZGY4NTBmZiIsInVzZXJfaWQiOjN9.C3sMORphqutkug-njpek9s3XXhpRngHrjhWDafs0mzM' \
+--form 'pet_name="kiki"' \
+--form 'chip="qwe123asd"' \
+--form 'category="1"' \
+--form 'breed="orange breed"' \
+--form 'sex="2"' \
+--form 'age="1"' \
+--form 'weight="5"' \
+--form 'description="kiki is cute"' \
+--form 'image=@"/Users/dualwings/Desktop/cat sample.png"'
+{
+    "success": true,
+    "id": 2
+}
+
+{
+    "success": false,
+    "error": "會員ID None 不存在!!"
+}
+
+curl --location --request POST 'http://127.0.0.1:8000/member/addPetInfo/' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIwMjMxMzU2LCJqdGkiOiI3ZmIyODRjOTk1ZWI0NjA5YjI0YmY2ZDc3NDBiNjk3NSIsInVzZXJfaWQiOjN9.W5eaaymFmdV6rt-sq30F5Edbe4NSI_EbGF_fY9IZCQw' \
+--form 'pet_name="kiki"' \
+--form 'chip="qwe123asd"' \
+--form 'category="1"' \
+--form 'breed="orange breed"' \
+--form 'sex="2"' \
+--form 'age="1"' \
+--form 'weight="5"' \
+--form 'description="kiki is cute"' \
+--form 'image=@"/Users/dualwings/Desktop/cat sample.png"' \
+--form 'member_id="10"'
+curl --location --request POST 'http://127.0.0.1:8000/member/addPetInfo/' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIwMjMzMDE1LCJqdGkiOiI3YTI1MjMyYTZiZjI0NmE5ODJiODE1YjJjNWRkNDcyOCIsInVzZXJfaWQiOjN9.9shfNI5UN5dNm9woKIHAOb3nHUxsJg7g0PCwAFe1dsc' \
+--form 'pet_name="kiki"' \
+--form 'chip="qwe123asd"' \
+--form 'category="1"' \
+--form 'breed="orange breed"' \
+--form 'sex="2"' \
+--form 'age="1"' \
+--form 'weight="5"' \
+--form 'description="kiki is cute"' \
+--form 'image=@"/Users/dualwings/Desktop/cat sample.png"' \
+--form 'member_id="5"'
+{
+    "success": true,
+    "id": 1
+}
+
+[getPetInfo]
+curl --location --request GET 'http://127.0.0.1:8000/member/getPetInfo?id=1' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIwMjYzMzczLCJqdGkiOiJjYTgzMzQ3NTRiMzc0Zjg5OWFlMjJkNjI5YzIxOTlhNyIsInVzZXJfaWQiOjN9.czr8NT5ImcmymojD9GXK3LuA6v59IS08xk7q9l-tRfM'
+{
+    "data": {
+        "id": 1,
+        "member_id": 5,
+        "pet_name": "kiki",
+        "chip": "qwe123asd",
+        "category": 1,
+        "breed": "orange breed",
+        "sex": 2,
+        "age": "1",
+        "weight": "5",
+        "description": "kiki is cute",
+        "photo": "/image/member/5/pet/cat sample.png"
+    },
+    "success": true
+}
+
+curl --location --request GET 'http://127.0.0.1:8000/member/getPetInfo?id=2' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIwMjYzNjAzLCJqdGkiOiIzMTViMzk0YjEwNDI0NzZlYjgwOWQxZDc3YWQ4OGFlMSIsInVzZXJfaWQiOjN9.Foz_TG41JPedoIot-o7OYU-0XGt7bCoDQywBhLYjKew'
+
+{
+    "success": false,
+    "error": "The id:2 不存在."
+}
+
+http://127.0.0.1:8000/member/updatePetInfo/
+curl --location --request POST 'http://127.0.0.1:8000/member/updatePetInfo/' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIwMjY0MzYzLCJqdGkiOiI4ZGUyZGE2ODI0NDk0Yjc4YTY4MGY0MmQ5ZTVhZWFmMCIsInVzZXJfaWQiOjN9.AEWxaPZK_plkM_rN9y8tvidaYkouv2TTM-dbReODff0' \
+--form 'id="1"' \
+--form 'member_id="5"' \
+--form 'pet_name="kiki"' \
+--form 'chip="we321asdcx"' \
+--form 'category="1"' \
+--form 'breed="blue cat"' \
+--form 'sex="2"' \
+--form 'age="2"' \
+--form 'weight="3"' \
+--form 'description="cute"' \
+--form 'image=@"/Users/dualwings/Desktop/cat1.jpeg"'
+
+{
+    "success": true
+}
+
+curl --location --request POST 'http://127.0.0.1:8000/member/updatePetInfo/' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIwMjY0NTA3LCJqdGkiOiIwZmIyYTIwYmZiN2Y0MzdkODIwNzVlNjk5MzIyOTU2NyIsInVzZXJfaWQiOjN9.ErKuokniDI0G0VF9qXQk9VkrdPEcpvIUVnbMB91nD9I' \
+--form 'id="3"' \
+--form 'member_id="5"' \
+--form 'pet_name="kiki"' \
+--form 'chip="we321asdcx"' \
+--form 'category="1"' \
+--form 'breed="blue cat"' \
+--form 'sex="2"' \
+--form 'age="2"' \
+--form 'weight="3"' \
+--form 'description="cute"' \
+--form 'image=@"/Users/dualwings/Desktop/cat1.jpeg"'
+
+{
+    "success": false,
+    "error": "The id:3 不存在."
+}
+
+http://127.0.0.1:8000/member/addDoctorInfo/
+
+curl --location --request POST 'http://127.0.0.1:8000/member/addDoctorInfo/' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIwNjUxMjE1LCJqdGkiOiI2NWI0MzM2YzE5NDU0MGUyYTk4MzBkODE0NGQ1YzgwZCIsInVzZXJfaWQiOjN9.UKer0KXiS85m_2JlAdUbcXgNueFgbfzhXGDTDZ2HrKI' \
+--form 'member_id="1"' \
+--form 'clinic="寵物診所"' \
+--form 'title="院長"' \
+--form 'skill="貓貓專家"' \
+--form 'experience="寵物診所"'
+
+{
+    "success": true,
+    "id": 2
+}
+curl --location --request POST 'http://127.0.0.1:8000/member/addDoctorInfo/' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIwNjUxMjE1LCJqdGkiOiI2NWI0MzM2YzE5NDU0MGUyYTk4MzBkODE0NGQ1YzgwZCIsInVzZXJfaWQiOjN9.UKer0KXiS85m_2JlAdUbcXgNueFgbfzhXGDTDZ2HrKI' \
+--form 'member_id="6"' \
+--form 'clinic="寵物診所"' \
+--form 'title="院長"' \
+--form 'skill="貓貓專家"' \
+--form 'experience="寵物診所"'
+{
+    "success": false,
+    "error": "會員ID 6 不存在!!"
+}
+
+
+http://127.0.0.1:8000/member/getDoctorInfo/?id=1
+{
+    "data": {
+        "id": 1,
+        "clinic": "寵物診所",
+        "title": "院長",
+        "skill": "貓貓專家",
+        "experience": "寵物診所"
+    },
+    "success": true
+}
+
+http://127.0.0.1:8000/member/getDoctorInfo/?id=6
+{
+    "success": false,
+    "error": "The id:6 不存在."
+}
+
+http://127.0.0.1:8000/member/updateDoctorInfo/
+curl --location --request POST 'http://127.0.0.1:8000/member/updateDoctorInfo/' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIwNjUyMDU3LCJqdGkiOiIzMzRmOThmNmM0MGM0ODgwODc4Y2FmYjRkZTU1NmExMiIsInVzZXJfaWQiOjN9.hZHH8pcypdBqIXhIGo7J94cMlqLVw6DtHdrD6nndIgw' \
+--form 'id="1"' \
+--form 'clinic="寵物醫院"' \
+--form 'title="院長"' \
+--form 'skill="貓貓專家"' \
+--form 'experience="寵物123"'
+
+{
+    "success": true
+}
+
+curl --location --request POST 'http://127.0.0.1:8000/member/updateDoctorInfo/' \
+--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIwNjUyMDU3LCJqdGkiOiIzMzRmOThmNmM0MGM0ODgwODc4Y2FmYjRkZTU1NmExMiIsInVzZXJfaWQiOjN9.hZHH8pcypdBqIXhIGo7J94cMlqLVw6DtHdrD6nndIgw' \
+--form 'id="6"' \
+--form 'clinic="寵物醫院"' \
+--form 'title="院長"' \
+--form 'skill="貓貓專家"' \
+--form 'experience="寵物123"'
+
+{
+    "success": false,
+    "error": "The id:6 不存在."
+}

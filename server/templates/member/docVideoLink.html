@@ -1,0 +1,128 @@
+{% extends "member/base.html" %}
+
+{% load static %}
+{% block extra_head %}
+
+{% endblock extra_head %}
+
+{% block sidemenu %}
+<li><a href="{% url 'index' %}"> <i class="fas fa-home"></i>首頁</a><li>          
+<li><a href="#doctorDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-md"></i>醫生 </a>
+  <ul id="doctorDropdown" class="collapse list-unstyled ">
+    <li><a href="/member/docApprovelist/">醫生申請核可</a></li>
+    <li class="active"><a href="/member/docVideoLink/">醫生視訊連結</a></li>
+  </ul>
+</li>
+<li><a href="#approveDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-stamp"></i>其他申請核可 </a>
+  <ul id="approveDropdown" class="collapse list-unstyled ">
+    <li><a href="/member/clinicApprovelist/">診所申請核可</a></li>
+    <li><a href="/member/storeApprovelist/">店家申請核可</a></li>
+  </ul>
+</li>
+{% endblock sidemenu %}
+
+{% block content %}
+<!-- page detail -->
+<div class="container-fluid px-3">
+  <div class="div">
+    <input type="hidden" id="src_doc_id">
+  </div>  
+  <p>
+    <span class="my-3 text-danger">醫生視訊連結</span>
+  </p>
+  <form action="" method="GET">
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <div class="input-group input-group-md mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text border-0" for="member_id">會員ID</label>
+          </div>          
+          <input type="text" class="form-control form-control-md" id="member_id"  name = "member_id" placeholder="請輸入會員ID">
+        </div>
+      </div>
+      <div class="col-md-1">
+        <button type="button" style="width:100%" class="btn btn-primary btn-md" id="btnQuery">查詢</button>
+      </div>
+    </div>
+  </form>
+  <div class="page-container" id="div_detail" style="display: none;">
+    <div class="row mb-3">
+      <div class="col">
+        <span class = "mx-3 text-secondary">醫生姓名</span>
+        <h1 class = "mx-3 text-dark" id="doc_name">
+        </h1>
+      </div>
+      <div class="col">
+        <span class = "mx-3 text-secondary">診所/職稱</span>
+        <h1 class = "mx-3" id="title">
+        </h1>
+      </div>      
+    </div>
+    <div class="row my-3">
+      <div class="col">
+        <span class = "mx-3 text-secondary">會員帳號</span>
+        <h1 class = "mx-3 text-dark" id="account">
+        </h1>
+      </div>
+      <div class="col">
+        <span class = "mx-3 text-secondary">會員暱稱</span>
+        <h1 class = "mx-3 text-dark" id="nick_name">
+        </h1>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col">
+        <span class = "mx-3 text-secondary">性別</span>
+        <h1 class = "mx-3 text-dark" id="sex">
+        </h1>
+      </div>
+      <div class="col">
+        <span class = "mx-3 text-secondary">Email</span>
+        <h1 class = "mx-3 text-dark" id="email">
+        </h1>
+      </div>
+    </div>
+    <div class="row my-3">
+      <div class="col">
+        <span class = "mx-3 text-secondary">專長</span>
+        <h1 class = "mx-3 text-dark" id="skill">
+        </h1>
+      </div>
+      <div class="col">
+        <span class = "mx-3 text-secondary">學經歷</span>
+        <h1 class = "mx-3 text-dark" id="experience">
+        </h1>
+      </div>
+    </div>      
+    <div class="row my-3">
+      <div class="col">
+        <span class = "mx-3 text-secondary">地區</span>
+        <h1 class = "mx-3 text-dark" id="area">
+        </h1>
+      </div>
+      <div class="col">
+        <span class = "mx-3 text-secondary">診所地址</span>
+        <h1 class = "mx-3 text-dark" id="clinic_addr">
+        </h1>
+      </div>
+    </div>
+    <form action=""  method="POST">
+      {% csrf_token %}                  
+      <div class="row mb-3">
+        <div class="col">
+          <span class = "mx-3 text-secondary">醫生會議室連結</span>
+          <input type="text" class="form-control form-control-md mx-3 my-2" id="room_url"  name="room_url">
+          <button type="button" class="btn mr-2 mx-3 btn-primary" id="btnUpdate">更新會議室連結</button>
+
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}
+
+{% block extra_scripts %}
+<!-- custom js -->
+<script src="{% static 'member/js/docVideoLink.js' %}"></script>
+{% endblock extra_scripts %}

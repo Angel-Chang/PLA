@@ -1,0 +1,23 @@
+{% extends "member/base.html" %}
+
+{% block sidemenu %}
+<li class="active"><a href="{% url 'index' %}"> <i class="fas fa-home"></i>首頁</a><li>          
+<li><a href="#doctorDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-user-md"></i>醫生 </a>
+  <ul id="doctorDropdown" class="collapse list-unstyled ">
+    <li><a href="/member/docApprovelist/">醫生申請核可</a></li>
+    <li><a href="/member/docVideoLink/">醫生視訊連結</a></li>
+  </ul>
+</li>
+<li><a href="#approveDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fas fa-stamp"></i>其他申請核可 </a>
+  <ul id="approveDropdown" class="collapse list-unstyled ">
+    <li><a href="/member/clinicApprovelist/">診所申請核可</a></li>
+    <li><a href="/member/storeApprovelist/">店家申請核可</a></li>
+  </ul>
+</li>
+{% endblock sidemenu %}
+
+{% block content %}
+<div class="container-fluid px-3">
+  <p class="my-3 text-danger">首頁</p>
+</div>
+{% endblock content %}
